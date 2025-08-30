@@ -1,22 +1,10 @@
-# Flight Network Analysis ✈️
+# Flight Network Analysis
 
-This project analyzes a flight network using graph theory.  
-It includes:
-- Custom DFS/BFS algorithms for connected component analysis  
-- NetworkX implementation for comparison  
-- Performance evaluation of both approaches  
+This project analyzes a flight network using graph modeling and connected component analysis.  
+Implemented both custom DFS/BFS algorithms and NetworkX for performance comparison.
 
-## Contents
-- `flight-network-analysis.ipynb` — Jupyter Notebook with full code and results
+## Run in Google Colab
 
-## Requirements
-- Python 3.x  
-- Jupyter Notebook  
-- NetworkX  
-- Matplotlib  
+You can open and run the notebook directly in Google Colab:
 
-## How to Run
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/damnayan/flight-network-analysis.git
-2.jupyter notebook flight-network-analysis.ipynb
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/damnayan/flight-network-analysis/blob/main/Task%203%20without%20Pandas.ipynb)
