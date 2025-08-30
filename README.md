@@ -1,16 +1,19 @@
-# Flight Network Analysis
+# Анализ сети авиаперелётов
 
-This project focuses on analyzing airline flight networks using graph theory.  
-The main goal is to identify **connected components** (isolated flight clusters) and compare the performance of **DFS** and **BFS** implementations.  
+Проект посвящён анализу сетей авиамаршрутов с использованием теории графов.
+Основная цель — выявить **связные компоненты** (изолированные кластеры перелётов) и сравнить эффективность реализации **DFS** и **BFS**.
 
-### Key Features:
-- Load flight datasets without using Pandas (via `csv`).
-- Custom **DFS** and **BFS** implementations for connected components detection.
-- Runtime benchmarking of DFS vs BFS on different dataset sizes.
-- Graph visualization with **matplotlib** and **NetworkX** (including weighted edges).
-- Analysis of isolated airports and network connectivity.
+### Основные возможности:
 
-### Run in Google Colab
-Open and run the notebook directly in Colab:
+* Загрузка датасетов авиарейсов без использования Pandas (через модуль `csv`).
+* Собственные реализации **DFS** и **BFS** для поиска связных компонент.
+* Сравнение времени работы DFS и BFS на датасетах разного размера.
+* Визуализация графа с помощью **matplotlib** и **NetworkX** (включая взвешенные рёбра).
+* Анализ изолированных аэропортов и общей связности сети.
+
+### Запуск в Google Colab
+
+Можно открыть и запустить ноутбук напрямую в Colab:
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/damnayan/flight-network-analysis/blob/main/Task%203%20without%20Pandas.ipynb)
+
