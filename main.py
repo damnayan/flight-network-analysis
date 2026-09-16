@@ -16,7 +16,7 @@ DEFAULT_DATASETS = {
 
 
 def find_airport_codes_file() -> str | None:
-    """Ищет файл со справочником кодов независимо от опечаток в названии."""
+    """Dynamically locates the airport code reference file regardless of naming variations."""
     possible_names = [
         "data/airport_codes.txt",
         "data/airports_codes.txt",
@@ -28,7 +28,6 @@ def find_airport_codes_file() -> str | None:
         if os.path.exists(path):
             return path
 
-    # Если лежит с другим регистром в data/
     if os.path.exists("data"):
         for fname in os.listdir("data"):
             if "airport" in fname.lower() and "code" in fname.lower():
