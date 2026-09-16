@@ -8,13 +8,32 @@ from src.graph import (
 )
 from src.visualize import plot_benchmark_results, plot_flight_network
 
-AIRPORTS_CODES_FILE = "data/airports_codes.txt"
-
 DEFAULT_DATASETS = {
     "small": "data/flights_small.txt",
     "medium": "data/flights_medium.txt",
     "large": "data/flights_large.txt",
 }
+
+
+def find_airport_codes_file() -> str | None:
+    """Ищет файл со справочником кодов независимо от опечаток в названии."""
+    possible_names = [
+        "data/airport_codes.txt",
+        "data/airports_codes.txt",
+        "data/airport_Codes.txt",
+        "data/airoport_Codes.txt",
+        "data/airport_codes.csv",
+    ]
+    for path in possible_names:
+        if os.path.exists(path):
+            return path
+
+    # Если лежит с другим регистром в data/
+    if os.path.exists("data"):
+        for fname in os.listdir("data"):
+            if "airport" in fname.lower() and "code" in fname.lower():
+                return os.path.join("data", fname)
+    return None
 
 
 def parse_args():
@@ -47,9 +66,11 @@ def main():
     print(" FLIGHT NETWORK GRAPH ANALYSIS & TRAVERSAL BENCHMARK")
     print("=" * 65)
 
-    codes_path = AIRPORTS_CODES_FILE if os.path.exists(AIRPORTS_CODES_FILE) else None
+    codes_path = find_airport_codes_file()
     if codes_path:
         print(f"[*] Loaded airport codes reference: {codes_path}")
+    else:
+        print("[!] Airport codes reference not detected, running with routes only.")
 
     targets = (
         DEFAULT_DATASETS.items()
